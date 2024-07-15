@@ -1,0 +1,102 @@
+/*Temparature Converter*/
+
+#include<iostream>
+#include<iomanip>
+
+using namespace std;
+void celcius()
+{
+  int ch1;
+  float celcius,fahrenheit,kelvin;
+  do
+  {
+  cout<<"\n1.Celcius to Fahrenheit\n2.Celcus to Kelvin\nEnter your choice ";
+  cin>>ch1;
+  switch(ch1)
+  {
+case 1:cout<<"Enter the temparature in celcius:";
+       cin>>celcius;
+       fahrenheit=(9/5)*celcius+32;
+       cout<<"Temparature in Fahrenheit:"<<fahrenheit;
+       break;
+case 2:cout<<"Enter the temparature in celcius:";
+       cin>>celcius;
+       kelvin=celcius+273.15;
+       cout<<"Temparature in kelvin:"<<kelvin;
+       break;
+
+  }
+  }while(ch1!=0);
+}
+void fahrenheit()
+{
+  int ch2;
+  float celcius,fahrenheit,kelvin;
+  do
+  {
+  cout<<"\n1.Fahrenheit to celcius\n2.Fahrenheit to Kelvin\nEnter your choice ";
+  cin>>ch2;
+  switch(ch2)
+  {
+case 1:cout<<"Enter the temparature in Fahrenheit:";
+       cin>>fahrenheit;
+       celcius=(fahrenheit-32)/ 1.8;
+       cout<<"Temparature in celcius:"<<celcius;
+       break;
+case 2:cout<<"Enter the temparature in Fahrenheit:";
+       cin>>celcius;
+       kelvin=(fahrenheit - 32) / 1.8 + 273.15;
+       cout<<"Temparature in kelvin:"<<kelvin;
+       break;
+
+  }
+  }while(ch2<=2);
+}
+
+void kelvin()
+{
+  int ch3;
+  float celcius,fahrenheit,kelvin;
+  do
+  {
+  cout<<"\n1.Kelvin to celcius\n2.Kelvin to fahrenheit\nEnter your choice ";
+  cin>>ch3;
+  switch(ch3)
+  {
+case 1:cout<<"Enter the temparature in kelvin:";
+       cin>>kelvin;
+       celcius=(kelvin -273.15);
+       cout<<"Temparature in celcius:"<<celcius;
+       break;
+case 2:cout<<"Enter the temparature in kelvin :";
+       cin>>kelvin;
+      fahrenheit = (1.8*(kelvin - 273)) + 32;
+       cout<<"Temparature in fahrenheit:"<<fahrenheit;
+       break;
+
+  }
+  }while(ch3!=0);
+}
+
+int main()
+{
+  int ch;
+  system("cls");
+  cout<<"---------------Temparature Converter----------------";
+  do
+  {
+   cout<<"\n1.Celcius\n2.Fahrenheit\n3.kelvin\nEnter your choice";
+   cin>>ch;
+   switch(ch)
+   {
+    case 1:celcius();
+           break;
+    case 2:fahrenheit();
+           break;
+    case 3:kelvin();
+           break;
+  
+
+   }
+  }while(ch!=0);
+}
